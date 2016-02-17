@@ -1261,13 +1261,13 @@ z80_jr			:	T_Z80_JR const_PCrel
 
 z80_ldi			:	T_Z80_LDI T_MODE_HL_IND comma T_MODE_A
 					{ out_AbsByte(0x02|(2<<4)); }
-				|	T_Z80_LDI T_MODE_A comma T_MODE_HL
+				|	T_Z80_LDI T_MODE_A comma T_MODE_HL_IND
 					{ out_AbsByte(0x0A|(2<<4)); }
 ;
 
 z80_ldd			:	T_Z80_LDD T_MODE_HL_IND comma T_MODE_A
 					{ out_AbsByte(0x02|(3<<4)); }
-				|	T_Z80_LDD T_MODE_A comma T_MODE_HL
+				|	T_Z80_LDD T_MODE_A comma T_MODE_HL_IND
 					{ out_AbsByte(0x0A|(3<<4)); }
 ;
 
